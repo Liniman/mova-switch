@@ -1,0 +1,8 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Renders and stills are scratch; the finished video is kept.
+out/*
+!out/mova-switch.mp4

@@ -1,0 +1,213 @@
+# suite	group	active	phrase
+# Phrases written for this project. Words in Latin script belong to U.S., words in Cyrillic to Ukrainian PC.
+# active=both types the phrase once under each layout: under its own layout it is a negative, under the other a positive.
+# active=us or ukrainian-pc types it under that layout only, without switching: mixed text.
+phrase	english	both	i am switching to the new keyboard
+phrase	english	both	I am going to be late today
+phrase	english	both	it is a really good idea
+phrase	english	both	we can do it after lunch
+phrase	english	both	do you want to go out tonight
+phrase	english	both	he is at the office now
+phrase	english	both	she said it was fine
+phrase	english	both	so i think we should wait
+phrase	english	both	if you need help just ask
+phrase	english	both	my brother is in town this week
+phrase	english	both	can you send me the file
+phrase	english	both	i am not sure about that
+phrase	english	both	it was a long day
+phrase	english	both	we are on the way home
+phrase	english	both	is it ok to call you later
+phrase	english	both	i have to go to the store
+phrase	english	both	you can use my laptop
+phrase	english	both	all of us were there
+phrase	english	both	how do you feel today
+phrase	english	both	why is it so slow
+phrase	english	both	the meeting is at noon
+phrase	english	both	let me know if it works
+phrase	english	both	he got a new job
+phrase	english	both	she is my best friend
+phrase	english	both	we had a lot of fun
+phrase	english	both	i was in the kitchen
+phrase	english	both	are you at home now
+phrase	english	both	but it is too late
+phrase	english	both	one of the cars broke down
+phrase	english	both	we did it on purpose
+phrase	english	both	you and i should talk
+phrase	english	both	it is up to you
+phrase	english	both	as far as i know
+phrase	english	both	by the way thanks a lot
+phrase	english	both	in the end it worked
+phrase	english	both	to be honest i forgot
+phrase	english	both	i will be there soon
+phrase	english	both	no one knows the answer
+phrase	english	both	oh no i lost my keys
+phrase	english	both	we may need more time
+phrase	english	both	a cup of coffee please
+phrase	english	both	it is my turn
+phrase	english	both	go to the next page
+phrase	english	both	he has a big house
+phrase	english	both	the dog is in the garden
+phrase	english	both	i saw it on the news
+phrase	english	both	you are so kind
+phrase	english	both	we can meet at the park
+phrase	english	both	it is not a problem
+phrase	english	both	i am at the station
+phrase	english	both	put it on the table
+phrase	english	both	do not forget the tickets
+phrase	english	both	so what do you think
+phrase	english	both	is he coming with us
+phrase	english	both	i did my best
+phrase	english	both	if it rains we stay home
+phrase	english	both	who is on the phone
+phrase	english	both	my mom and dad say hello
+phrase	english	both	the kids are at school
+phrase	english	both	it is a nice place
+phrase	english	both	we are in the same team
+phrase	english	both	i got your message
+phrase	english	both	can we talk about it
+phrase	english	both	how was your weekend
+phrase	english	both	and then we went home
+phrase	english	both	or we could order pizza
+phrase	english	both	at the end of the day
+phrase	english	both	it was the best movie
+phrase	english	both	we need to fix the bug
+phrase	english	both	i am on my way
+phrase	english	both	he is in a hurry
+phrase	english	both	you can try it again
+phrase	english	both	let us go for a walk
+phrase	english	both	the bus is late again
+phrase	english	both	i was so tired
+phrase	english	both	we all agree on this
+phrase	english	both	is it far from here
+phrase	english	both	she has two cats
+phrase	english	both	my phone is dead
+phrase	english	both	it is time to sleep
+phrase	ukrainian	both	а потім ми підемо додому
+phrase	ukrainian	both	я не знаю що робити
+phrase	ukrainian	both	ти де зараз
+phrase	ukrainian	both	він у школі
+phrase	ukrainian	both	ми з тобою підемо в кіно
+phrase	ukrainian	both	а як твої справи
+phrase	ukrainian	both	це не моя справа
+phrase	ukrainian	both	я в дорозі
+phrase	ukrainian	both	ну то й що
+phrase	ukrainian	both	як ти себе почуваєш
+phrase	ukrainian	both	ми вже на місці
+phrase	ukrainian	both	у нас все добре
+phrase	ukrainian	both	я з мамою в магазині
+phrase	ukrainian	both	він не прийде сьогодні
+phrase	ukrainian	both	а де ключі від машини
+phrase	ukrainian	both	так і є
+phrase	ukrainian	both	що ти робиш увечері
+phrase	ukrainian	both	я на роботі
+phrase	ukrainian	both	ви де живете
+phrase	ukrainian	both	ми за тобою заїдемо
+phrase	ukrainian	both	і так зрозуміло
+phrase	ukrainian	both	це був гарний день
+phrase	ukrainian	both	я ще не їв
+phrase	ukrainian	both	чи є у тебе час
+phrase	ukrainian	both	бо я втомився
+phrase	ukrainian	both	а що далі
+phrase	ukrainian	both	я теж хочу піти
+phrase	ukrainian	both	до зустрічі завтра
+phrase	ukrainian	both	у мене є ідея
+phrase	ukrainian	both	ти вже бачив новину
+phrase	ukrainian	both	я в магазині біля дому
+phrase	ukrainian	both	він на кухні
+phrase	ukrainian	both	ми по дорозі додому
+phrase	ukrainian	both	а ти що думаєш
+phrase	ukrainian	both	на жаль я не можу
+phrase	ukrainian	both	це для тебе
+phrase	ukrainian	both	я за кермом
+phrase	ukrainian	both	ну як там справи
+phrase	ukrainian	both	ми в парку
+phrase	ukrainian	both	вона з братом
+phrase	ukrainian	both	я хочу кави
+phrase	ukrainian	both	а потім подзвони мені
+phrase	ukrainian	both	він сам усе зробив
+phrase	ukrainian	both	у неї день народження
+phrase	ukrainian	both	я без телефону
+phrase	ukrainian	both	де ти був учора
+phrase	ukrainian	both	як буде час напиши
+phrase	ukrainian	both	це не так просто
+phrase	ukrainian	both	ми з ним друзі
+phrase	ukrainian	both	я йду в магазин
+phrase	ukrainian	both	там дуже холодно
+phrase	ukrainian	both	тут немає світла
+phrase	ukrainian	both	хто це зробив
+phrase	ukrainian	both	а я вже вдома
+phrase	ukrainian	both	ти чи я
+phrase	ukrainian	both	я до тебе зайду
+phrase	ukrainian	both	він про це знає
+phrase	ukrainian	both	ми під дощем
+phrase	ukrainian	both	я на зупинці
+phrase	ukrainian	both	це мій друг
+phrase	ukrainian	both	а коли ти будеш
+phrase	ukrainian	both	я в лікарні
+phrase	ukrainian	both	ти не повіриш
+phrase	ukrainian	both	ще трохи і все
+phrase	ukrainian	both	він з нами
+phrase	ukrainian	both	я так і знав
+phrase	ukrainian	both	на вихідних поїдемо до бабусі
+phrase	ukrainian	both	у тебе все добре
+phrase	ukrainian	both	я не можу знайти телефон
+phrase	ukrainian	both	ми теж прийдемо
+phrase	ukrainian	both	а ось і ми
+phrase	ukrainian	both	як там погода
+phrase	ukrainian	both	це вже не важливо
+phrase	ukrainian	both	ну все я пішов
+phrase	ukrainian	both	ми на вокзалі
+phrase	ukrainian	both	я і мій брат
+phrase	ukrainian	both	вона в офісі
+phrase	ukrainian	both	а де всі
+phrase	ukrainian	both	що з тобою
+phrase	ukrainian	both	о котрій ти будеш
+phrase	ukrainian	both	я у ванній
+phrase	ukrainian	both	ми й так знаємо
+phrase	ukrainian	both	ви з нами чи ні
+phrase	ukrainian	both	та я жартую
+phrase	mixed-ukrainian	ukrainian-pc	зайди в slack
+phrase	mixed-ukrainian	ukrainian-pc	я в zoom
+phrase	mixed-ukrainian	ukrainian-pc	напиши у telegram
+phrase	mixed-ukrainian	ukrainian-pc	дивись на github
+phrase	mixed-ukrainian	ukrainian-pc	це з figma
+phrase	mixed-ukrainian	ukrainian-pc	відкрий у chrome
+phrase	mixed-ukrainian	ukrainian-pc	я з iphone
+phrase	mixed-ukrainian	ukrainian-pc	ми в notion
+phrase	mixed-ukrainian	ukrainian-pc	він у google
+phrase	mixed-ukrainian	ukrainian-pc	скинь у gmail
+phrase	mixed-ukrainian	ukrainian-pc	я на youtube
+phrase	mixed-ukrainian	ukrainian-pc	це для docker
+phrase	mixed-ukrainian	ukrainian-pc	а потім deploy
+phrase	mixed-ukrainian	ukrainian-pc	і ще meeting
+phrase	mixed-ukrainian	ukrainian-pc	у неї macbook
+phrase	mixed-ukrainian	ukrainian-pc	я в office
+phrase	mixed-ukrainian	ukrainian-pc	то був release
+phrase	mixed-ukrainian	ukrainian-pc	ну це feature
+phrase	mixed-ukrainian	ukrainian-pc	ти до standup
+phrase	mixed-ukrainian	ukrainian-pc	ми про budget
+phrase	mixed-ukrainian	ukrainian-pc	як там sprint
+phrase	mixed-ukrainian	ukrainian-pc	де той commit
+phrase	mixed-ukrainian	ukrainian-pc	чи є update
+phrase	mixed-ukrainian	ukrainian-pc	я по review
+phrase	mixed-ukrainian	ukrainian-pc	він за laptop
+phrase	mixed-english	us	say привіт to him
+phrase	mixed-english	us	i love борщ
+phrase	mixed-english	us	a борщ recipe
+phrase	mixed-english	us	we went to київ
+phrase	mixed-english	us	my friend from львів
+phrase	mixed-english	us	i said дякую
+phrase	mixed-english	us	a big привіт from me
+phrase	mixed-english	us	in одеса
+phrase	mixed-english	us	it is смачно
+phrase	mixed-english	us	so дякую
+phrase	mixed-english	us	at бабусі
+phrase	mixed-english	us	i am вдома
+phrase	mixed-english	us	the вареники were great
+phrase	mixed-english	us	my бабуся says hi
+phrase	mixed-english	us	on неділю
+phrase	mixed-english	us	we ate вареники
+phrase	mixed-english	us	to україна
+phrase	mixed-english	us	an дуже good one
+phrase	mixed-english	us	by потягом
+phrase	mixed-english	us	as завжди

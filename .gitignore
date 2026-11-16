@@ -1,0 +1,10 @@
+target/
+
+
+
+data/raw/
+mac/.build/
+video/node_modules/
+video/out/*
+!video/out/mova-switch.mp4
+.serena/

@@ -1,0 +1,18 @@
+[package]
+name = "engine"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+
+[lib]
+crate-type = ["rlib", "staticlib", "cdylib"]
+
+[[bin]]
+name = "eval"
+path = "src/bin/eval.rs"
+
+[[bin]]
+name = "build-data"
+path = "src/bin/build_data.rs"
+
