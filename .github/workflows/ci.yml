@@ -89,7 +89,7 @@ jobs:
           git switch -c formula-head
           brew tap-new --no-git local/mova
           formula="$(brew --repository local/mova)/Formula/mova-switch.rb"
-          sed "s|https://github.com/Liniman/mova-switch.git\", branch: \"main\"|file://$PWD\", branch: \"formula-head\"|" \
+          sed "s|https://github.com/Liniman/mova-switch.git\", branch: \"main\"|file://$PWD\", branch: \"formula-head\", using: :git|" \
             packaging/homebrew/mova-switch.rb > "$formula"
           grep -q "file://$PWD" "$formula"
           brew install --HEAD --verbose local/mova/mova-switch
