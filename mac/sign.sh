@@ -58,6 +58,7 @@ if [[ " ${search[*]-} " != *" $keychain "* ]]; then
 	/usr/bin/security list-keychains -d user -s ${search[@]+"${search[@]}"} "$keychain"
 fi
 
+/usr/bin/codesign --remove-signature "$app"
 /usr/bin/codesign --force --sign "$name" --keychain "$keychain" --identifier com.liniman.MovaSwitch "$app"
 /usr/bin/codesign --verify --strict "$app"
 /usr/bin/codesign -d -r- "$app" 2>&1 | sed -n 's/^designated => /requirement=/p'

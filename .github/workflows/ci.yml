@@ -57,7 +57,7 @@ jobs:
           verify
           first="$(requirement)"
           echo "$first"
-          grep -q 'certificate root' <<< "$first"
+          grep -q '^identifier "com.liniman.MovaSwitch" and certificate' <<< "$first"
 
           cat install.sh | sh
           verify
@@ -92,7 +92,7 @@ jobs:
           sed "s|https://github.com/Liniman/mova-switch.git\", branch: \"main\"|file://$PWD\", branch: \"formula-head\"|" \
             packaging/homebrew/mova-switch.rb > "$formula"
           grep -q "file://$PWD" "$formula"
-          brew install --HEAD local/mova/mova-switch
+          brew install --HEAD --verbose local/mova/mova-switch
           brew test local/mova/mova-switch
       - name: Install and remove through the formula commands
         run: |
