@@ -34,9 +34,9 @@ flowchart LR
 
 ## Permission and signing
 
-`sign.sh` creates a self-signed code-signing identity once, in its own keychain under `~/Library/Application Support/MovaSwitch/signing`. The designated requirement names the bundle ID and that certificate, so an Accessibility grant survives every rebuild.
+`build.sh` signs the bundle ad hoc and copies `install-app.sh` and `sign.sh` into `Contents/Resources`, so a release zip installs itself without a checkout. `install-app.sh` is the only install path: the root `install.sh`, `mac/install.sh` and the Homebrew command all call it. It runs `sign.sh` on the copy in `~/Applications`. `sign.sh` creates a self-signed code-signing identity once, in its own keychain under `~/Library/Application Support/MovaSwitch/signing`. The designated requirement names the bundle ID and that certificate, so an Accessibility grant survives every rebuild and update.
 
-When the app has no Accessibility grant, `install.sh` opens the Accessibility pane so you can switch MovaSwitch on. The app writes `accessibility-granted` once the grant exists.
+When the app has no Accessibility grant, `install-app.sh` opens the Accessibility pane so you can switch MovaSwitch on. The app writes `accessibility-granted` once the grant exists.
 
 ## Verification
 

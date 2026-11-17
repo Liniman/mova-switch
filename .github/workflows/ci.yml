@@ -8,12 +8,18 @@ on:
 permissions:
   contents: read
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   engine:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: dtolnay/rust-toolchain@39008827e6b4319a349e9a42dfc90579dd25f1ca # stable
         with:
           components: clippy
       - run: cargo test --workspace
@@ -21,8 +27,77 @@ jobs:
       - run: cargo run --release -p engine --bin eval
 
   mac:
-    runs-on: macos-latest
+    runs-on: macos-15
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: dtolnay/rust-toolchain@39008827e6b4319a349e9a42dfc90579dd25f1ca # stable
       - run: mac/test.sh --compile-only
+      - run: mac/package.sh "$RUNNER_TEMP/dist"
+      - name: Install twice from the zip through stdin, as curl | sh does
+        env:
+          MOVA_LOCAL_ZIP: ${{ runner.temp }}/dist/MovaSwitch-arm64.zip
+        run: |
+          app="$HOME/Applications/MovaSwitch.app"
+          agent="$HOME/Library/LaunchAgents/com.liniman.MovaSwitch.plist"
+          verify() {
+            test -x "$app/Contents/MacOS/MovaSwitch"
+            /usr/bin/codesign --verify --strict "$app"
+            /usr/bin/plutil -lint "$agent"
+            /bin/launchctl print "gui/$(id -u)/com.liniman.MovaSwitch" >/dev/null
+          }
+          requirement() {
+            /usr/bin/codesign -d -r- "$app" 2>&1 | sed -n 's/^designated => //p'
+          }
+
+          sh < install.sh | tee "$RUNNER_TEMP/first.txt"
+          test "$(wc -l < "$RUNNER_TEMP/first.txt")" -le 3
+          verify
+          first="$(requirement)"
+          echo "$first"
+          grep -q 'certificate root' <<< "$first"
+
+          cat install.sh | sh
+          verify
+          test "$(requirement)" = "$first"
+
+          if MOVA_LOCAL_ZIP='' MOVA_VERSION=latest sh install.sh 2> "$RUNNER_TEMP/err.txt"; then exit 1; fi
+          grep -q 'release tag' "$RUNNER_TEMP/err.txt"
+      - name: Uninstall
+        run: |
+          sh -s -- --purge < uninstall.sh
+          test ! -e "$HOME/Applications/MovaSwitch.app"
+          test ! -e "$HOME/Library/LaunchAgents/com.liniman.MovaSwitch.plist"
+          if /bin/launchctl print "gui/$(id -u)/com.liniman.MovaSwitch" >/dev/null 2>&1; then exit 1; fi
+          if /usr/bin/security list-keychains -d user | grep -q mova-signing; then exit 1; fi
+
+  homebrew:
+    runs-on: macos-15
+    timeout-minutes: 30
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_INSTALL_CLEANUP: 1
+      HOMEBREW_NO_ENV_HINTS: 1
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Install the formula from this commit
+        run: |
+          git switch -c formula-head
+          brew tap-new --no-git local/mova
+          formula="$(brew --repository local/mova)/Formula/mova-switch.rb"
+          sed "s|https://github.com/Liniman/mova-switch.git\", branch: \"main\"|file://$PWD\", branch: \"formula-head\"|" \
+            packaging/homebrew/mova-switch.rb > "$formula"
+          grep -q "file://$PWD" "$formula"
+          brew install --HEAD local/mova/mova-switch
+          brew test local/mova/mova-switch
+      - name: Install and remove through the formula commands
+        run: |
+          mova-switch-install
+          /usr/bin/codesign --verify --strict "$HOME/Applications/MovaSwitch.app"
+          /bin/launchctl print "gui/$(id -u)/com.liniman.MovaSwitch" >/dev/null
+          mova-switch-uninstall --purge
+          test ! -e "$HOME/Applications/MovaSwitch.app"

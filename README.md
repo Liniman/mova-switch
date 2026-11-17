@@ -10,15 +10,17 @@ You typed `ghbdsn` and meant `привіт`. MovaSwitch rewrites the word and sw
 
 ## Install
 
-You need macOS 13 or later, the Xcode Command Line Tools, and [Rust](https://rustup.rs). Add the **U.S.** and **Ukrainian – PC** keyboards in **System Settings > Keyboard > Input Sources**.
+You need macOS 13 or later on an Apple silicon Mac. Add the **U.S.** and **Ukrainian – PC** keyboards in **System Settings > Keyboard > Input Sources**.
 
 ```sh
-git clone https://github.com/Liniman/mova-switch
-cd mova-switch
-mac/install.sh
+curl -fsSL https://raw.githubusercontent.com/Liniman/mova-switch/main/install.sh | sh
 ```
 
-The installer opens **Privacy & Security > Accessibility**. Turn on **MovaSwitch** there. To remove the app, run `mac/uninstall.sh`.
+Run the same line to update. The installer opens **Privacy & Security > Accessibility**. Turn on **MovaSwitch** there.
+
+With Homebrew, run `brew install --HEAD liniman/tap/mova-switch`, then `mova-switch-install`. To build from a clone instead, install the Xcode Command Line Tools and [Rust](https://rustup.rs), then run `mac/install.sh`.
+
+To remove the app, run `curl -fsSL https://raw.githubusercontent.com/Liniman/mova-switch/main/uninstall.sh | sh`.
 
 ## Use
 
@@ -45,7 +47,7 @@ On held-out words, MovaSwitch wrongly rewrites 0.03% of correct words and catche
 
 ## Plans
 
-- A signed download and a Homebrew install
+- A notarized download
 - Conversion while you are still typing the word
 - Better handling of one- and two-letter words
 - A documented way to add a language

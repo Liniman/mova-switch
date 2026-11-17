@@ -1,6 +1,7 @@
 #!/bin/bash
 # Signs the app with a local self-signed identity so its designated requirement, and with it
-# the user's Accessibility grant, stays the same across rebuilds. Creates the identity once.
+# the user's Accessibility grant, stays the same across rebuilds and updates. Creates the
+# identity once. Ships inside the app bundle so install-app.sh can run it without a checkout.
 set -euo pipefail
 
 root="$(cd "$(dirname "$0")" && pwd)"
@@ -43,7 +44,7 @@ CONFIG
 		-keyout "$work/key.pem" -out "$work/cert.pem" 2>/dev/null
 	/usr/bin/openssl pkcs12 -export -inkey "$work/key.pem" -in "$work/cert.pem" \
 		-out "$work/identity.p12" -passout pass:transfer
-	/usr/bin/security import "$work/identity.p12" -k "$keychain" -P transfer -T /usr/bin/codesign
+	/usr/bin/security import "$work/identity.p12" -k "$keychain" -P transfer -T /usr/bin/codesign >/dev/null
 	/usr/bin/security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$password" "$keychain" >/dev/null
 fi
 
@@ -53,8 +54,8 @@ while IFS= read -r entry; do
 	entry="${entry#\"}"
 	search+=("${entry%\"}")
 done < <(/usr/bin/security list-keychains -d user)
-if [[ " ${search[*]} " != *"$keychain"* ]]; then
-	/usr/bin/security list-keychains -d user -s "${search[@]}" "$keychain"
+if [[ " ${search[*]-} " != *" $keychain "* ]]; then
+	/usr/bin/security list-keychains -d user -s ${search[@]+"${search[@]}"} "$keychain"
 fi
 
 /usr/bin/codesign --force --sign "$name" --keychain "$keychain" --identifier com.liniman.MovaSwitch "$app"
